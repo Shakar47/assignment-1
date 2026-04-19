@@ -14,4 +14,8 @@ describe('App Endpoints', () => {
     expect(res.statusCode).toBe(200);
     expect(res.body.status).toBe('healthy');
   });
+
+  afterAll(done => {
+    done();
+  });
 });
