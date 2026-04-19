@@ -5,13 +5,13 @@ FROM node:18-alpine
 WORKDIR /usr/src/app
 
 # Copy package files first (layer caching optimization)
-COPY package*.json ./
+COPY app/package*.json ./
 
 # Install dependencies
 RUN npm install --only=production
 
 # Copy application source code
-COPY app.js .
+COPY app/app.js .
 
 # Expose the port the app runs on
 EXPOSE 3000
